@@ -52,7 +52,8 @@
             text-align: center;
             color: white;
         }
-        .contaniner h2{
+
+        .contaniner h2 {
             color: black;
         }
 
@@ -107,7 +108,7 @@
                 <input id="ncuenta" type="text" name="name" placeholder="Nombre">
             </div>
             <div class="datos">
-                <label for="pw">Nombre de la Cuenta: </label>
+                <label for="pw">Contraseña: </label>
                 <input id="pw" type="text" name="contraseña" placeholder="Contraseña">
             </div>
             <div class="datos">

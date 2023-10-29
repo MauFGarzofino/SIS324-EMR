@@ -33,6 +33,25 @@ function registrarUsuario() {
     ajax.send(datos);
 }
 
+function registrarPaciente() {
+    var formulario = document.getElementById('formPaciente');
+    var datos = new FormData(formulario);
+
+    var ajax = new XMLHttpRequest();
+    ajax.open('POST', './config/crearPaciente.php', true);
+
+    ajax.onreadystatechange = function() {
+        if (ajax.readyState == 4 && ajax.status == 200) {
+            alert(ajax.responseText); // Puedes modificar esta parte para manejar la respuesta como desees
+            cargarContenido('read.php');
+        }
+    }
+
+    ajax.send(datos);
+}
+
+
+
 function editarAlumno(id)
 {
     cargarContenido('form_update_alumnos.php?id='+id)
