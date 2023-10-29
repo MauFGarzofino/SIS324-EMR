@@ -16,17 +16,17 @@ function cargarContenido(abrir) {
     ajax.send();
 }
 
-function registrarAlumno() {
-    var formulario = document.getElementById('formAlumno');
+function registrarUsuario() {
+    var formulario = document.getElementById('formUsuario');
     var datos = new FormData(formulario);
 
     var ajax = new XMLHttpRequest();
-    ajax.open('POST', 'crear.php', true);
+    ajax.open('POST', './config/crearUsuario.php', true);
 
     ajax.onreadystatechange = function() {
         if (ajax.readyState == 4 && ajax.status == 200) {
             alert(ajax.responseText); // Puedes modificar esta parte para manejar la respuesta como desees
-            cargarContenido('read.php')
+            cargarContenido('usuariosRead.php')
         }
     }
 

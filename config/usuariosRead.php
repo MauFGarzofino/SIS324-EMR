@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Información</title>
+    <script src="./ajax/ajax.js" defer></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -99,23 +100,27 @@
 
             <div class="datos">
                 <label for="nombre">Display Name: </label>
-                <input id="nombre" type="text" name="nombre" placeholder="Nombre">
+                <input id="nombre" type="text" name="displayName" placeholder="Nombre">
             </div>
             <div class="datos">
-                <label for="NCuenta">Nombre de la Cuenta: </label>
-                <input id="NCuenta" type="text" name="nombre" placeholder="Nombre">
+                <label for="nCuenta">Nombre de la Cuenta: </label>
+                <input id="ncuenta" type="text" name="name" placeholder="Nombre">
+            </div>
+            <div class="datos">
+                <label for="pw">Nombre de la Cuenta: </label>
+                <input id="pw" type="text" name="contraseña" placeholder="Contraseña">
             </div>
             <div class="datos">
                 <label for="fotografia">Fotografía</label>
                 <input type="file" name="fotografia" id="fotografia">
             </div>
         </form>
-        <button type="button" onclick="registrarUsuario()">Registrar</button>
+        <button type="submit"><a href="javascript:registrarUsuario()">Registrar</a></button>
     </div>
     <?php
     include('conexion.php');
 
-    $sql = "SELECT id, display_name, user_name, profile_picture FROM users";
+    $sql = "SELECT id, display_name, user_name, password,profile_picture FROM users";
 
     $result = $connect->query($sql);
 
@@ -128,6 +133,7 @@
                     <th>Id</th>
                     <th>Nombre</th>
                     <th>Nombre de la Cuenta</th>
+                    <th>Contraseña</th>
                     <th>Fotografía</a></th>
                 </tr>
                 <?php while ($row = $result->fetch_assoc()) { ?>
@@ -135,10 +141,10 @@
                         <td><?php echo $row["id"]; ?></td>
                         <td><?php echo $row["display_name"]; ?></td>
                         <td><?php echo $row["user_name"]; ?></td>
+                        <td><?php echo $row["password"]; ?></td>
                         <td><img src="./imágenes/<?php echo $row["profile_picture"]; ?>" alt="" width="100px"></td>
                         <td class="operaciones">
                             <a class="btn btn-danger" href="javascript:editarAlumno(<?php echo $row['id']; ?>)">Editar</a>
-                            <!--<a href="form_update_alumnos.php?id=<?php echo $row['id']; ?>"><button class="button1">Editar</button></a>-->
                             <a class="btn btn-primary" href="javascript:deleteAlumno(<?php echo $row['id']; ?>)">Eliminar</a>
                         </td>
                     </tr>

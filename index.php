@@ -40,9 +40,9 @@
     <div class="card card-outline card-primary rounded-0 shadow">
       <div class="card-body login-card-body">
         <p class="login-box-msg">Ingresa tus credenciales</p>
-        <form method="post">
+        <form action="autenticar.php" method="post">
           <div class="input-group mb-3">
-            <input type="text" class="form-control form-control-lg rounded-0 autofocus" placeholder="Username" id="user_name" name="user_name">
+            <input type="text" class="form-control form-control-lg rounded-0 autofocus" placeholder="Nombre de Usuario" id="user_name" name="user_name">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-user"></span>
@@ -50,7 +50,7 @@
             </div>
           </div>
           <div class="input-group mb-3">
-            <input type="password" class="form-control form-control-lg rounded-0" placeholder="Password" id="password" name="password">
+            <input type="password" class="form-control form-control-lg rounded-0" placeholder="Password" id="contraseña" name="contraseña">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-lock"></span>
@@ -68,6 +68,7 @@
             <div class="col-md-12">
               <p class="text-danger">
                 <?php
+                $message = '';
                 if ($message != '') {
                   echo $message;
                 }
