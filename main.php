@@ -12,7 +12,9 @@
     <div class="contenedor">
         <div class="header">
             <div class="logo">
-                <div class="img"></div>
+                <div class="img">
+                    <img src="./imágenes/drsimi.jpg" class="img-thumbnail p-0 border rounded-circle" id="system-logo">
+                </div>
             </div>
             <div class="nombre">Sistema de Gestión de Pacientes de la Clínica</div>
         </div>
@@ -22,7 +24,8 @@
                 <div class="menu">
                     <div class="item">Panel</div>
                     <div class="item"> <a href="javascript:cargarContenido('./config/read.php')"> Pacientes </a></div>
-                    <div class="item">Medicinas</div>
+                    <div class="item"><a href="javascript:cargarContenido('./config/readmedicametos.php')"> Medicinas </a></div>
+                    <div class="item"><a href="javascript:cargarContenido('./config/medicamentosDetalles.php')"> Medicinas detalles </a></div>
                     <div class="item">Reportes</div>
                     <div class="item"> <a href="javascript:cargarContenido('./config/UsuariosRead.php')"> Usuarios </a></div>
                     <div class="item">Logout</div>
