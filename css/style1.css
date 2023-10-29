@@ -1,0 +1,118 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    background-color: beige;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.contenedor {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(65, 64, 63);
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor1 {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(219, 198, 177);
+    display: flex;
+    flex-direction: row;
+
+}
+
+.header {
+    width: 100%;
+    height: 10%;
+    background-color: rgb(26, 31, 77);
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.logo {
+    display: flex;
+    width: 20%;
+    height: 100%;
+    background-color: rgb(77, 75, 69);
+    justify-content: center;
+    align-items: center;
+}
+.img
+{
+    width: 80%;
+    height: 80%;
+    background-color: rgb(255, 255, 255);
+}
+
+.nombre {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(73, 70, 66);
+}
+
+.aside {
+    width: 20%;
+    height: 100%;
+    background-color: rgb(17, 17, 19);
+    float: left;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.perfil {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex-grow: 1;
+    align-content: center;
+}
+
+.item {
+    display: flex;
+    width: 100%;
+    height: 8%;
+    margin-bottom: 1em;
+    justify-content: center;
+}
+
+.main {
+    width: 80%;
+    height: 100%;
+    background-color: rgb(77, 75, 69);
+    float: right;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.dashboard {
+    width: 100%;
+    flex-grow: 1;
+}
+
+.footer {
+    width: 100%;
+    height: 10%;
+    background-color: rgb(46, 45, 40);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
