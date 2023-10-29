@@ -1,7 +1,7 @@
 html, body {
     width: 100%;
     height: 100%;
-    background-color: beige;
+    background-color: rgb(46, 46, 58);
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -10,7 +10,7 @@ html, body {
 .contenedor {
     width: 100%;
     height: 100%;
-    background-color: rgb(65, 64, 63);
+    background-color: rgb(29, 29, 32);
     display: flex;
     flex-direction: column;
 }
@@ -27,7 +27,7 @@ html, body {
 .header {
     width: 100%;
     height: 10%;
-    background-color: rgb(26, 31, 77);
+    background-color: rgb(74, 79, 94);
     display: flex;
     align-items: center;
     color: white;
@@ -37,7 +37,7 @@ html, body {
     display: flex;
     width: 20%;
     height: 100%;
-    background-color: rgb(77, 75, 69);
+    background-color: rgb(0, 0, 0);
     justify-content: center;
     align-items: center;
 }
@@ -54,13 +54,13 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(73, 70, 66);
+    background-color: rgb(74, 79, 94);
 }
 
 .aside {
     width: 20%;
     height: 100%;
-    background-color: rgb(17, 17, 19);
+    background-color: rgb(0, 0, 0);
     float: left;
     color: white;
     display: flex;
@@ -95,7 +95,7 @@ html, body {
 .main {
     width: 80%;
     height: 100%;
-    background-color: rgb(77, 75, 69);
+    background-color: rgb(73, 74, 77);
     float: right;
     display: flex;
     flex-direction: column;
@@ -103,6 +103,7 @@ html, body {
 }
 
 .dashboard {
+    background-color: rgb(74, 79, 94);
     width: 100%;
     flex-grow: 1;
 }
@@ -110,7 +111,7 @@ html, body {
 .footer {
     width: 100%;
     height: 10%;
-    background-color: rgb(46, 45, 40);
+    background-color: rgb(74, 79, 94);
     color: white;
     display: flex;
     align-items: center;
