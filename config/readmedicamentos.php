@@ -33,7 +33,7 @@
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
-            background-color: #f2f2f2;
+            background-color: rgba(53,58,64,255);
         }
 
         th,

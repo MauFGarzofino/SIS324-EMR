@@ -13,7 +13,7 @@
         <div class="header">
             <div class="logo">
                 <div class="img">
-                    <img src="./imágenes/drsimi.jpg" class="img-thumbnail p-0 border rounded-circle" id="system-logo">
+                    <p> Clínica ERM </p>
                 </div>
             </div>
             <div class="nombre">Sistema de Gestión de Pacientes de la Clínica</div>
@@ -22,14 +22,14 @@
             <div class="aside">
                 <div class="perfil">Administrador</div>
                 <div class="menu">
-                    <div class="item">Panel</div>
+                    <div class="item"><a href=""> Panel </a></div>
                     <div class="item"> <a href="javascript:cargarContenido('./config/read.php')"> Pacientes </a></div>
-                    <div class="item"><a href="javascript:cargarContenido('./config/AddPaciente.php')"> añadir paciente </a></div>
+                    <div class="item"><a href="javascript:cargarContenido('./config/AddPaciente.php')"> Añadir paciente </a></div>
                     <div class="item"><a href="javascript:cargarContenido('./config/readmedicamentos.php')"> Medicinas </a></div>
                     <div class="item"><a href="javascript:cargarContenido('./config/medicamentosDetalles.php')"> Medicinas detalles </a></div>
-                    <div class="item">Reportes</div>
+                    <div class="item"><a href=""> Reportes </a></div>
                     <div class="item"> <a href="javascript:cargarContenido('./config/UsuariosRead.php')"> Usuarios </a></div>
-                    <div class="item">Logout</div>
+                    <div class="item"><a href=""> Logout </a></div>
                 </div>
             </div>
             <div class="main">
