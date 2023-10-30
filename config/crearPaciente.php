@@ -11,9 +11,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $phone_number = $_POST['phone_number'];
     $gender = $_POST['gender'];
 
-    $sql = "INSERT INTO patients (patient_name, address, cnic, date_of_birth, phone_number, gender)
+    $sql = "INSERT INTO `patients` (`patient_name`, `address`, `cnic`, `date_of_birth`, `phone_number`, `gender`)
     VALUES ('$patientName', '$address', '$cnic', '$dateBirth', '$phone_number', '$gender')";
-
+    
     if ($connect->query($sql) === TRUE) {
         $response['status'] = 'success';
         $response['message'] = 'Paciente agregado exitosamente.';

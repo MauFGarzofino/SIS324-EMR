@@ -110,8 +110,8 @@
             </div>
 
             <div class="form-group">
-                <label for="address">Dirección:</label>
-                <input type="text" id="address" name "address" class="form-control" required>
+                <label for="add">Dirección:</label>
+                <input type="text" id="add" name="address" class="form-control" required>
             </div>
 
             <div class="form-group">

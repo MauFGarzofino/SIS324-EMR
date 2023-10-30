@@ -23,7 +23,7 @@ if (isset($_POST["displayName"])) {
 
     $sql = "INSERT INTO `users`(`display_name`,
     `user_name`, `password`, `profile_picture`) VALUES ('$dname', '$name', '$encryptedPassword', '$fotografia');";
-
+    
 
     if ($connect->query($sql) === TRUE) {
         echo "Alumno registrado";
