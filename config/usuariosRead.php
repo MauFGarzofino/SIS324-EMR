@@ -9,52 +9,62 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #F2F2F2;
+            color: #333;
         }
 
         a {
             text-decoration: none;
             margin-top: 5px;
+            color: white;
         }
 
         table {
-            width: 100%;
+            width: 95%;
             border-collapse: collapse;
             margin: 20px 0;
-            background-color: #f2f2f2;
+            background-color: #E0E0E0;
+            margin-left: 70px;
         }
 
         th,
         td {
-            border: 1px solid #dddddd;
+            border: 1px solid #B0B0B0;
             padding: 8px 15px;
-            text-align: left;
+            text-align: center;
         }
 
         th {
-            background-color: #f2f2f2;
+            background-color: #B0B0B0;
+            color: #333;
         }
 
         tr:hover {
-            background-color: #f5f5f5;
+            background-color: #D0D0D0;
         }
 
         .contaniner {
-            background-color: #ffffff;
+            background-color: #E0E0E0;
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             max-width: 500px;
             margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
-        h1,
         h2 {
+            font-size: 35px;
             text-align: center;
-            color: white;
+            color: #232423;
+            margin-top: 10px;
         }
-
-        .contaniner h2 {
-            color: black;
+        h3{
+            text-align: center;
+            color: #555;
+            margin-top: 10px;
         }
 
         .datos {
@@ -64,40 +74,83 @@
         label {
             display: block;
             margin-bottom: 5px;
+            color: #555;
         }
 
         input[type="text"],
         input[type="file"] {
             width: 95%;
             padding: 8px;
-            border: 1px solid #ddd;
+            border: 1px solid #B0B0B0;
             border-radius: 4px;
+            transition: border 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="file"]:focus {
+            border-color: #555;
         }
 
         button {
             display: block;
-            background-color: #007BFF;
-            color: white;
+            background-color: #929D97;
             padding: 10px 15px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
             margin-top: 10px;
-            width: 100%;
+            color: white;
+            transition: background-color 0.3s;
         }
 
         button:hover {
-            background-color: #0056b3;
+            background-color: #CCDFD4;
+        }
+
+        .btnE,
+        .btnD {
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin: 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btnE:hover,
+        .btnD:hover {
+            transform: scale(1.05);
+        }
+
+        .btnE {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .btnD {
+            background-color: #f44336;
+            color: white;
+        }
+        .img-container img {
+            max-width: 150px;
+            max-height: 100px;
+            transition: transform 0.3s;
+        }
+
+        .img-container:hover img {
+            transform: scale(1.1);
         }
     </style>
 </head>
 
 <body class="body">
 
-    <h1>Crear Usuario</h1>
+    <h2>Crear Usuario</h2>
     <div class="contaniner">
-        <form id="formUsuario" enctype="multpart/form-data">
-            <h2>Registrar Usuario</h2>
+        <form id="formUsuario" enctype="multipart/form-data">
+            <h3>Registrar Usuario</h3>
 
             <div class="datos">
                 <label for="nombre">Display Name: </label>
@@ -133,9 +186,10 @@
                 <tr>
                     <th>Id</th>
                     <th>Nombre</th>
-                    <th>Nombre de la Cuenta</th>
+                    <th>User Name</th>
                     <th>Contraseña</th>
-                    <th>Fotografía</a></th>
+                    <th>Fotografía</th>
+                    <th>Operaciones</th>
                 </tr>
                 <?php while ($row = $result->fetch_assoc()) { ?>
                     <tr>
@@ -143,10 +197,12 @@
                         <td><?php echo $row["display_name"]; ?></td>
                         <td><?php echo $row["user_name"]; ?></td>
                         <td><?php echo $row["password"]; ?></td>
-                        <td><img src="./imágenes/<?php echo $row["profile_picture"]; ?>" alt="" width="100px"></td>
+                        <td class="img-container">
+                            <img src="./imágenes/<?php echo $row["profile_picture"]; ?>" alt="">
+                        </td>
                         <td class="operaciones">
-                            <a class="btn btn-danger" href="javascript:editarAlumno(<?php echo $row['id']; ?>)">Editar</a>
-                            <a class="btn btn-primary" href="javascript:deleteAlumno(<?php echo $row['id']; ?>)">Eliminar</a>
+                            <a class="btnE" href="javascript:editarAlumno(<?php echo $row['id']; ?>)">Editar</a>
+                            <a class="btnD" href="javascript:deleteAlumno(<?php echo $row['id']; ?>)">Eliminar</a>
                         </td>
                     </tr>
                 <?php } ?>
