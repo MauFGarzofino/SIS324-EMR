@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="./css/adminlte.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
   <style>
     .login-box {
@@ -40,7 +42,7 @@
     <div class="card card-outline card-primary rounded-0 shadow">
       <div class="card-body login-card-body">
         <p class="login-box-msg">Ingresa tus credenciales</p>
-        <form action="autenticar.php" method="post">
+        <form action="./config/autenticar.php" method="post" id="loginForm">
           <div class="input-group mb-3">
             <input type="text" class="form-control form-control-lg rounded-0 autofocus" placeholder="Nombre de Usuario" id="user_name" name="user_name">
             <div class="input-group-append">
@@ -61,31 +63,35 @@
             <div class="col-12">
               <button name="login" type="submit" class="btn btn-primary rounded-0 btn-block">Iniciar Sesión</button>
             </div>
-            <!-- /.col -->
-          </div>
-
-          <div class="row">
-            <div class="col-md-12">
-              <p class="text-danger">
-                <?php
-                $message = '';
-                if ($message != '') {
-                  echo $message;
-                }
-                ?>
-              </p>
-            </div>
           </div>
         </form>
-
-
+        <div id="errorDiv" style="color: red;"></div>
       </div>
-      <!-- /.login-card-body -->
     </div>
   </div>
-  <!-- /.login-box -->
+
 
   <!-- jQuery -->
+  <script>
+    $(document).ready(function() {
+      $("#loginForm").submit(function(e) {
+        e.preventDefault();
+
+        $.ajax({
+          type: "POST",
+          url: "config/autenticar.php",
+          data: $(this).serialize(),
+          success: function(response) {
+            if (response == "success") {
+              window.location.href = "main.php";
+            } else {
+              $("#errorDiv").text("Usuario o contraseña incorrectos");
+            }
+          }
+        });
+      });
+    });
+  </script>
 
 </body>
 

@@ -26,7 +26,7 @@ if (isset($_POST["displayName"])) {
     
 
     if ($connect->query($sql) === TRUE) {
-        echo "Alumno registrado";
+        echo "Usuario registrado";
     } else {
         echo "Error: " . $sql . "<br>" . $connect->error;
     }
