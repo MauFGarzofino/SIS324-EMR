@@ -22,14 +22,12 @@
             <div class="aside">
                 <div class="perfil">Administrador</div>
                 <div class="menu">
-                    <div class="item"><a href=""> Panel </a></div>
                     <div class="item"> <a href="javascript:cargarContenido('./config/read.php')"> Pacientes </a></div>
                     <div class="item"><a href="javascript:cargarContenido('./config/AddPaciente.php')"> Añadir paciente </a></div>
                     <div class="item"><a href="javascript:cargarContenido('./config/readmedicamentos.php')"> Medicinas </a></div>
                     <div class="item"><a href="javascript:cargarContenido('./config/medicamentosDetalles.php')"> Medicinas detalles </a></div>
-                    <div class="item"><a href=""> Reportes </a></div>
                     <div class="item"> <a href="javascript:cargarContenido('./config/UsuariosRead.php')"> Usuarios </a></div>
-                    <div class="item"><a href=""> Logout </a></div>
+                    <div class="item"><a href="index.php"> Logout </a></div>
                 </div>
             </div>
             <div class="main">
