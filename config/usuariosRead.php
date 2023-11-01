@@ -7,132 +7,119 @@
     <title>Información</title>
     <script src="./ajax/ajax.js" defer></script>
     <style>
+        html,
         body {
-            font-family: Arial, sans-serif;
-            background-color: #F2F2F2;
-            color: #333;
+            width: 100%;
+            height: 100%;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        a {
-            text-decoration: none;
-            margin-top: 5px;
+        .header,
+        .footer {
+            background-color: #353a40;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .contaniner {
+            background-color: #2c2f33;
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 500px;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             color: white;
         }
 
         table {
             width: 95%;
             border-collapse: collapse;
-            margin: 20px 0;
-            background-color: #E0E0E0;
-            margin-left: 70px;
+            margin: 20px auto;
+            background-color: #353a40;
+            color: white;
         }
 
         th,
         td {
-            border: 1px solid #B0B0B0;
+            border: 1px solid #4c5259;
             padding: 8px 15px;
             text-align: center;
         }
 
         th {
-            background-color: #B0B0B0;
-            color: #333;
+            background-color: #4a4a4a;
         }
 
         tr:hover {
-            background-color: #D0D0D0;
-        }
-
-        .contaniner {
-            background-color: #E0E0E0;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
-            margin: 20px auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        h2 {
-            font-size: 35px;
-            text-align: center;
-            color: #232423;
-            margin-top: 10px;
-        }
-        h3{
-            text-align: center;
-            color: #555;
-            margin-top: 10px;
-        }
-
-        .datos {
-            margin-bottom: 15px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-            color: #555;
+            background-color: #424242;
         }
 
         input[type="text"],
         input[type="file"] {
-            width: 95%;
+            width: calc(100% - 16px);
             padding: 8px;
-            border: 1px solid #B0B0B0;
+            border: 1px solid #444;
             border-radius: 4px;
-            transition: border 0.3s;
+            background-color: #fff;
+            color: #000;
+            margin-bottom: 15px;
         }
 
         input[type="text"]:focus,
         input[type="file"]:focus {
-            border-color: #555;
+            border-color: #1E90FF;
         }
 
-        button {
-            display: block;
-            background-color: #929D97;
-            padding: 10px 15px;
+        #registrar {
+            background-color: #1E90FF;
+            color: white;
+            padding: 5px 2px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            margin-top: 10px;
-            color: white;
-            transition: background-color 0.3s;
-        }
-
-        button:hover {
-            background-color: #CCDFD4;
-        }
-
-        .btnE,
-        .btnD {
-            padding: 10px 15px;
-            border: none;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            margin: 5px;
-            border-radius: 5px;
             transition: background-color 0.3s, transform 0.3s;
+            text-align: center;
+            display: block;
+            margin: 10px auto;
+            text-decoration: none;
         }
 
-        .btnE:hover,
-        .btnD:hover {
+        #btnE,
+        #btnD {
+            background-color: #1E90FF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            text-align: center;
+            display: block;
+            margin: 10px auto;
+            text-decoration: none;
+        }
+
+        button:hover,
+        #btnE:hover,
+        #btnD:hover {
+            background-color: #0073e6;
             transform: scale(1.05);
         }
 
-        .btnE {
-            background-color: #4CAF50;
-            color: white;
+        h2,
+        h3 {
+            text-align: center;
+            color: #ffffff;
+            margin-top: 10px;
         }
 
-        .btnD {
-            background-color: #f44336;
-            color: white;
-        }
         .img-container img {
             max-width: 150px;
             max-height: 100px;
@@ -141,6 +128,21 @@
 
         .img-container:hover img {
             transform: scale(1.1);
+        }
+
+        .page-link {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        .page-link:hover {
+            background-color: #1E90FF;
+            color: #ffffff;
+            border-color: #1E90FF;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -153,12 +155,12 @@
             <h3>Registrar Usuario</h3>
 
             <div class="datos">
-                <label for="nombre">Display Name: </label>
+                <label for="nombre"> Nombre: </label>
                 <input id="nombre" type="text" name="displayName" placeholder="Nombre">
             </div>
             <div class="datos">
                 <label for="nCuenta">Nombre de la Cuenta: </label>
-                <input id="ncuenta" type="text" name="name" placeholder="Nombre">
+                <input id="nCuenta" type="text" name="name" placeholder="Nombre">
             </div>
             <div class="datos">
                 <label for="pw">Contraseña: </label>
@@ -169,7 +171,7 @@
                 <input type="file" name="fotografia" id="fotografia">
             </div>
         </form>
-        <button type="submit"><a href="javascript:registrarUsuario()">Registrar</a></button>
+        <button id="registrar" type="submit"><a class="page-link" href="javascript:registrarUsuario()">Registrar</a></button>
     </div>
     <?php
     include('conexion.php');
@@ -186,7 +188,7 @@
                 <tr>
                     <th>Id</th>
                     <th>Nombre</th>
-                    <th>User Name</th>
+                    <th>Nombre de Usuario</th>
                     <th>Contraseña</th>
                     <th>Fotografía</th>
                     <th>Operaciones</th>
@@ -201,8 +203,8 @@
                             <img src="./imágenes/<?php echo $row["profile_picture"]; ?>" alt="">
                         </td>
                         <td class="operaciones">
-                            <a class="btnE" href="javascript:editarAlumno(<?php echo $row['id']; ?>)">Editar</a>
-                            <a class="btnD" href="javascript:deleteAlumno(<?php echo $row['id']; ?>)">Eliminar</a>
+                            <a id="btnE" class="page-link"" href=" javascript:editarAlumno(<?php echo $row['id']; ?>)">Editar</a>
+                            <a id="btnD" class="page-link"" href=" javascript:deleteAlumno(<?php echo $row['id']; ?>)">Eliminar</a>
                         </td>
                     </tr>
                 <?php } ?>

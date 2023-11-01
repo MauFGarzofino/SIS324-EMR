@@ -71,8 +71,8 @@
             <table>
                 <tr>
                     <th>Id</th>
-                    <th>Visit Date</th>
-                    <th>Bp</a></th>
+                    <th>Fecha de consulta</th>
+                    <th>Presión Arterial</a></th>
                     <th>Enfermedad</th>
                     <th>Id Paciente</th>
 
