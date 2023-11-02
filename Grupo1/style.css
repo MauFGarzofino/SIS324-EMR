@@ -6,23 +6,26 @@ body {
   background-color: #f9f9f9;
   font-family: Arial, sans-serif;
 }
-h2 {
+
+h2,h5 {
   background-color: #5679b9;
   color: white;
   padding: 10px;
   text-align: center;
-  width: 46%;
+  width: 100%;
 }
+
 .container {
   display: flex;
   flex-direction: column;
   margin: auto;
   width: 900px;
 }
+
 table {
   width: 100%;
   border-collapse: collapse;
-  border: 1px solid #706868; 
+  border: 1px solid #706868;
   margin-top: 20px;
 }
 
@@ -49,84 +52,51 @@ tr:nth-child(odd) {
   text-align: center;
 }
 
-.form {
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  width: 300px; 
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+#buscar {
+  border: 1px solid #ced4da;
+  border-radius: 20px;
+  /* Bordes redondeados */
+  padding: 0.375rem 0.75rem;
+  /* Espaciado interno */
+  transition: border-color 0.2s, box-shadow 0.2s;
+  /* Transición suave */
 }
+
+#buscar:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  /* Sombreado al enfocar */
+}
+
 label {
-  margin-top: 10px; 
-  font-weight: bold; 
+  margin-top: 10px;
+  font-weight: bold;
 }
+
 input,
 select {
   width: 400px;
-  margin-top: 5px; 
-  margin-bottom: 10px; 
+  margin-top: 5px;
+  margin-bottom: 10px;
   padding: 8px;
   border: 1px solid #706868;
-  border-radius: 4px; 
-button {
-  background-color: #628fd1;
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 10px; 
-}
-a {
-  color: white;
-  text-decoration: none;
-}
-button:hover {
-  background-color: #3e5c70; 
-}
-#eliminar {
-  background-color: rgb(197, 125, 119);
-}
-#editar {
-  background-color: #78bb6a;
-}
-}
-.emr-form-container {
-    margin-top: 20px;
+  border-radius: 4px;
+
+  a {
+    color: white;
+    text-decoration: none;
   }
 
-  .emr-form {
-    background-color: #f4f4f4;
-    padding: 20px;
-    border-radius: 8px;
-    margin-top: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  button:hover {
+    background-color: #3e5c70;
   }
 
-  .emr-form h3 {
-    margin-bottom: 10px;
-    color: #333;
+  #eliminar {
+    background-color: rgb(197, 125, 119);
   }
 
-  .emr-form label {
-    display: block;
-    margin-top: 10px;
+  #editar {
+    background-color: #78bb6a;
   }
-
-  .emr-form textarea {
-    width: calc(100% - 16px);
-    height: 35px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    padding: 8px;
-    border: 1px solid #706868;
-    border-radius: 4px;
-  }
-
+}
