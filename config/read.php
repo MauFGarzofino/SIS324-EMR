@@ -171,7 +171,9 @@
     <?php
     include('conexion.php');
 
-    $sql = "SELECT id, visit_date, bp, disease, patient_id FROM patient_visits";
+    $sql = "SELECT 
+    pv.id, pv.visit_date, pv.disease, m.medicine_name, md.packing, pmh.dosage, pmh.quantity FROM  patient_visits AS pv LEFT JOIN  patient_medication_history AS pmh ON pv.id = pmh.patient_visit_id LEFT JOIN 
+    medicine_details AS md ON pmh.medicine_details_id = md.id LEFT JOIN  medicines AS m ON md.medicine_id = m.id;";
 
     // echo $sql;
     $result = $connect->query($sql);
@@ -184,9 +186,11 @@
                 <tr>
                     <th>Id</th>
                     <th>Fecha de consulta</th>
-                    <th>Presión Arterial</a></th>
                     <th>Enfermedad</th>
-                    <th>Id Paciente</th>
+                    <th>Nombre Medicamento</th>
+                    <th>Cantidad por Empaque</th>
+                    <th>Cantidad</th>
+                    <th>Dosis</th>
                     <th>Operaciones</th>
 
                 </tr>
@@ -194,9 +198,11 @@
                     <tr>
                         <td><?php echo $row["id"]; ?></td>
                         <td><?php echo $row["visit_date"]; ?></td>
-                        <td><?php echo $row["bp"]; ?></td>
                         <td><?php echo $row["disease"]; ?></td>
-                        <td><?php echo $row["patient_id"]; ?></td>
+                        <td><?php echo $row["medicine_name"]; ?></td>
+                        <td><?php echo $row["packing"]; ?></td>
+                        <td><?php echo $row["dosage"]; ?></td>
+                        <td><?php echo $row["quantity"]; ?></td>
                         <td class="operaciones">
                             <a class="btn btn-danger" href="javascript:editarAlumno(<?php echo $row['id']; ?>)">Editar</a>
                             <a class="btn btn-primary" href="javascript:deleteAlumno(<?php echo $row['id']; ?>)">Eliminar</a>

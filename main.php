@@ -22,8 +22,8 @@
             <div class="aside">
                 <div class="perfil">Administrador</div>
                 <div class="menu">
-                    <div class="item"> <a href="javascript:cargarContenido('./config/read.php')"> Pacientes </a></div>
-                    <div class="item"><a href="javascript:cargarContenido('./config/AddPaciente.php')"> Añadir paciente </a></div>
+                    <div class="item"> <a href="javascript:cargarContenido('./config/read.php')"> Historial de Pacientes </a></div>
+                    <div class="item"><a href="javascript:cargarContenido('./config/AddPaciente.php')"> Pacientes </a></div>
                     <div class="item"><a href="javascript:cargarContenido('./config/readmedicamentos.php')"> Medicinas </a></div>
                     <div class="item"><a href="javascript:cargarContenido('./config/medicamentosDetalles.php')"> Medicinas detalles </a></div>
                     <div class="item"> <a href="javascript:cargarContenido('./config/UsuariosRead.php')"> Usuarios </a></div>
